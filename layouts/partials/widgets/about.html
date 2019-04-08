@@ -66,6 +66,27 @@
         {{ end }}
       </ul>
 
+      <!-- javascript version:  https://stackoverflow.com/a/10300743 -->
+      <script type="text/javascript">
+          function gen_mail_to_link(lhs,rhs) {
+              document.write("<a href=\"mailto");
+              document.write(":" + lhs + "@");
+              document.write(rhs + "\">" + lhs + "@" + rhs + "<\/a>");
+          }
+      </script>
+
+      <script type="text/javascript"> 
+          gen_mail_to_link('pablo','speciale.com.AR');
+      </script>
+      <noscript>
+        <!-- CSS version (no clickeable): https://stackoverflow.com/a/41566570 -->
+        <a href="#" class="cryptedmail"
+        data-name="pablo"
+        data-domain="speciale"
+        data-tld="com.AR"
+        onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a>
+      </noscript>
+
     </div>
   </div>
   <div class="col-12 col-lg-8" itemprop="description">

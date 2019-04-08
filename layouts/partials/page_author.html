@@ -53,6 +53,29 @@
       </li>
       {{ end }}
     </ul>
+
+
+    <!-- javascript version:  https://stackoverflow.com/a/10300743 -->
+    <script type="text/javascript">
+        function mail2link(lhs,rhs) {
+            document.write("<a href=\"mailto");
+            document.write(":" + lhs + "@");
+            document.write(rhs + "\">" + lhs + "@" + rhs + "<\/a>");
+        }
+    </script>
+
+    <script type="text/javascript"> 
+        mail2link('pablo','speciale.com.ar');
+    </script>
+    <noscript>
+      <!-- CSS version (no clickeable): https://stackoverflow.com/a/41566570 -->
+      <a href="#" class="cryptedmail"
+      data-name="pablo"
+      data-domain="speciale"
+      data-tld="com.ar"
+      onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a>
+    </noscript>
+
   </div>
 </div>
 {{end}}
