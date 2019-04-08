@@ -64,28 +64,42 @@
           </a>
         </li>
         {{ end }}
+
+        <!-- Manual envelope -->
+        <p style="margin-left:0.3em"></p>
+        <li>
+        <a href="#email"
+          data-name="pablo"
+          data-domain="speciale"
+          data-tld="com.ar"
+          onclick="window.location.href = 'mailto:' +
+                   this.dataset.name + '+online@' +
+                   this.dataset.domain + '.' +
+                   this.dataset.tld; return false;">
+          <span style="color: #3F51B5;">
+            <i class="fas fa-envelope big-icon"></i>
+          </span>
+        </a> 
+        </li>
       </ul>
 
-      <!-- javascript version:  https://stackoverflow.com/a/10300743 -->
-      <script type="text/javascript">
-          function gen_mail_to_link(lhs,rhs) {
-              document.write("<a href=\"mailto");
-              document.write(":" + lhs + "@");
-              document.write(rhs + "\">" + lhs + "@" + rhs + "<\/a>");
-          }
-      </script>
-
-      <script type="text/javascript"> 
-          gen_mail_to_link('pablo','speciale.com.AR');
-      </script>
-      <noscript>
-        <!-- CSS version (no clickeable): https://stackoverflow.com/a/41566570 -->
-        <a href="#" class="cryptedmail"
+      <!-- Email obfuscation: CSS version -->
+      <!-- mailto:abuse@hotmail.com </a> -->
+      <br/>
+      <a href="#email"
         data-name="pablo"
         data-domain="speciale"
-        data-tld="com.AR"
-        onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a>
-      </noscript>
+        data-tld="com.ar"
+        onclick="window.location.href = 'mailto:' +
+                 this.dataset.name + '+online@' +
+                 this.dataset.domain + '.' +
+                 this.dataset.tld; return false;">
+        <style type="text/css">  
+          p span.displaynone { display:none; }
+          p span.reverse {unicode-bidi: bidi-override; direction: rtl; }
+        </style>
+        <p><b>pablo</b><span class="displaynone">null</span><span class="reverse"><i class="fas fa-at"></i></span><b>speciale.com<span class="displaynone">mailto:abuse@hotmail.com</span>.AR<span class="displaynone"><span class="reverse">.info</span></span></b></p> 
+      </a> 
 
     </div>
   </div>
