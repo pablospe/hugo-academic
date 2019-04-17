@@ -20,6 +20,9 @@
   {{ if not (in (slice "talk" "page") $.Type) }}
   <span class="article-date">
     {{ $date := $.Lastmod.Format $.Site.Params.date_format }}
+    {{ if eq $.Type "project" }}
+      {{ $date = "" }}
+    {{ end }}
     {{ if eq $.Type "publication" }}
       {{ $date = $.Date.Format ($.Site.Params.publications.date_format | default "January, 2006") }}
     {{ else }}
