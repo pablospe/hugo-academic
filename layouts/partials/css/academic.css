@@ -1076,6 +1076,14 @@ article .article-metadata {
   padding-top: 1rem;
 }
 
+.publication-short {
+  color: rgb(32,156,238,0.80);
+  margin: 0.5em;
+  margin-left: 0em;
+  font-size: 115%;
+  font-weight: bold;
+}
+
 /*************************************************
  *  Stream
  **************************************************/
@@ -1086,7 +1094,7 @@ article .article-metadata {
 
 .media.stream-item .article-title,
 .card-simple .article-title {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 .media.stream-item .article-style,

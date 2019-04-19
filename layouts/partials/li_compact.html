@@ -34,11 +34,14 @@
       <a href="{{ $item.RelPermalink }}" itemprop="url">{{ $item.Title }}</a>
     </h3>
 
+<!-- Removed summary -->
+<!-- 
     {{ with $summary }}
     <div class="article-style" itemprop="articleBody">
       {{ . | truncate 135 }}
     </div>
     {{ end }}
+-->
 
     <div class="stream-meta article-metadata">
 
@@ -68,6 +71,14 @@
       {{ else if not $show_authors_only }}
         {{ partial "page_metadata" (dict "content" $item "is_list" 1) }}
       {{ end }}
+
+      <!-- Conference + Year -->
+      {{ if .Params.publication_short }}
+        <div class="publication-short">
+          {{- .Params.publication_short | markdownify -}} &nbsp; {{- .Date.Format "2006" -}}
+        </div>
+      {{ end }}
+
     </div>
 
     {{ if $show_buttons }}
