@@ -41,7 +41,7 @@
   <div class="row">
     <div class="col-6">
       <div class="split-header-content">
-        <h1 itemprop="name">{{ $title }}</h1>
+        <h3 itemprop="name">{{ $title }}</h3>
 
         {{ with $page.Params.subtitle }}
         <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
@@ -54,12 +54,22 @@
         {{ partial "share.html" $page }}
       </div>
     </div>
-    <div class="col-6">
-      <div class="split-header-image">
-        <img src="{{ $image.RelPermalink }}" itemprop="image" alt="">
-        {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+
+    {{ if $.Params.teaser }}
+      <div class="col-6">
+        <div class="split-teaser-image">
+          <img src="{{ $.Params.teaser }}" itemprop="image" alt="">
+        </div>
       </div>
-    </div>
+    {{ else }}
+      <div class="col-6">
+        <div class="split-header-image">
+          <img src="{{ $image.RelPermalink }}" itemprop="image" alt="">
+          {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+        </div>
+      </div>
+    {{ end }}
+
   </div>
 </div>
 
