@@ -30,8 +30,16 @@
           {{ i18n "last_updated" }}
       {{ end }}
     {{ end }}
-    <time>{{ $date }}</time>
+    <!-- <time>{{ $date }}</time> -->
   </span>
+  {{ end }}
+
+  <!-- Conference + Year -->
+  {{ if $.Params.publication_short }}
+    <div class="publication-short">
+      {{- $.Params.publication_short | markdownify -}} &nbsp; {{- $.Date.Format "2006" -}}
+    </div>
+    <p style="margin: -1em"></p>
   {{ end }}
 
   {{ if and (eq $is_list 1) (eq $.Type "publication") }}
