@@ -60,6 +60,7 @@
 {{ end }}
 {{ if $.Params.projects }}
 {{ range $.Params.projects }}
+  <!-- Remove "Project" button
   {{ with ($.Site.GetPage (printf "project/%s" .)) }}
   <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ .RelPermalink }}">
     {{ i18n "btn_project" }}
@@ -67,6 +68,7 @@
   {{ else }}
     {{/* errorf "The `projects` parameter in `content/%s` references a project file, `content/project/%s`, which cannot be found. Please either set `projects = []` or fix the reference." $.File.Path . */}}
   {{ end }}
+-->
 {{ end }}
 {{ else }}
 {{ with $.Params.url_project }}
