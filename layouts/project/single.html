@@ -20,7 +20,8 @@
     {{ $items := where (where .Site.RegularPages "Type" "post") ".Params.projects" "intersect" (slice $project) }}
     {{ $count := len $items }}
     {{ if ge $count 1 }}
-      <h2>{{ (i18n "posts") }}</h2>
+      <h3>{{ (i18n "posts") }}</h3>
+      <br>
       {{ range $items }}
         {{ if eq $page.Site.Params.projects.post_view 1 }}
           {{ partial "li_list" . }}
@@ -35,7 +36,8 @@
     {{ $items := where (where .Site.RegularPages "Type" "publication") ".Params.projects" "intersect" (slice $project) }}
     {{ $pubs_len := len $items }}
     {{ if ge $pubs_len 1 }}
-      <h2>{{ (i18n "publications") }}</h2>
+      <h3>{{ (i18n "publications") }}</h3>
+      <br>
       {{ range $items }}
         {{ if eq $page.Site.Params.projects.publication_view 1 }}
           {{ partial "li_list" . }}
@@ -52,7 +54,8 @@
     {{ $items := where (where .Site.RegularPages "Type" "talk") ".Params.projects" "intersect" (slice $project) }}
     {{ $talks_len := len $items }}
     {{ if ge $talks_len 1 }}
-      <h2>{{ (i18n "talks") }}</h2>
+      <h3>{{ (i18n "talks") }}</h3>
+      <br>
       {{ range $items }}
         {{ if eq $page.Site.Params.projects.talk_view 1 }}
           {{ partial "li_list" . }}
