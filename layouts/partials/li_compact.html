@@ -35,7 +35,7 @@
     </h3>
 
 <!-- Removed summary -->
-<!-- 
+<!--
     {{ with $summary }}
     <div class="article-style" itemprop="articleBody">
       {{ . | truncate 135 }}
@@ -76,6 +76,12 @@
       {{ if .Params.publication_short }}
         <div class="publication-short">
           {{- .Params.publication_short | markdownify -}} &nbsp; {{- .Date.Format "2006" -}}
+        </div>
+        <p style="margin: -1em"></p>
+        <div>
+          {{ if $.Params.publication_type }}
+            <i><b>( {{- $.Params.publication_type | markdownify -}} )</b></i>
+          {{ end }}
         </div>
       {{ end }}
 

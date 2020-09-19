@@ -40,6 +40,11 @@
       {{- $.Params.publication_short | markdownify -}} &nbsp; {{- $.Date.Format "2006" -}}
     </div>
     <p style="margin: -1em"></p>
+    <div>
+      {{ if $.Params.publication_type }}
+        <i><b>( {{- $.Params.publication_type | markdownify -}} )</b></i>
+      {{ end }}
+    </div>
   {{ end }}
 
   {{ if and (eq $is_list 1) (eq $.Type "publication") }}
